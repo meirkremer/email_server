@@ -36,7 +36,7 @@ def send_email():
 
 @app.route('/receive-email', methods=['POST'])
 def receive_email():
-    data = request.form
+    data = request.get_json()
 
     message = data.get('message', {})
     print(f'email message: {message}')
