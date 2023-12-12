@@ -36,10 +36,9 @@ def send_email():
 
 @app.route('/receive-email', methods=['POST'])
 def receive_email():
-    data = request.get_data(as_text=True)
-    print(f"Received Pub/Sub message: {data}")
-    # Implement your notification handling logic here
-    # This could include sending system notifications, emails, etc.
+    data = request.form
+
+    message = data.get('message', {})
     return 'OK', 200
 
 
