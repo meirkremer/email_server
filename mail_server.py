@@ -39,6 +39,7 @@ def receive_email():
     data = request.form
 
     message = data.get('message', {})
+    print(f'email message: {message}')
     return 'OK', 200
 
 
